@@ -1,0 +1,25 @@
+/* 
+* File: powers.c
+* Author: Kunal Pai, ECS36A
+* Objective: To find calculate exponentiation of 10,
+* from -4 to 4,
+* in C, using the syntax of C.
+*/
+
+#include <stdio.h>
+#include <math.h>
+#include "genlib.h"
+#include "simpio.h"
+
+int main()
+{
+double solution1, solution2;
+printf("                          k\n");
+printf("k                       10\n");
+for(int i=-4; i<=4; i++)
+{
+double x=pow(10,i);
+printf("%4d",x);
+}
+return 0;
+}

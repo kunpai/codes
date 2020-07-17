@@ -1,0 +1,32 @@
+/* 
+* File: fibonacci.c
+* Author: Kunal Pai, ECS36A
+* Objective: To display numbers from the Fibonacci series,
+* till the 15th term
+* in C, using the syntax of C.
+*/
+
+#include <stdio.h>
+#include "genlib.h"
+#include "simpio.h"
+
+int main()
+{
+int f0=0;
+int f1=1;
+printf(" F(%d) = %4d\n", f0,f0);
+printf(" F(%d) = %4d\n", f1,f1);
+for(int i=2; i<16; i++)
+{
+int f2=f1+f0;
+if (i<10)
+{
+printf(" F(%d) = %4d\n", i,f2);
+}
+else
+printf("F(%d) = %4d\n", i,f2);
+f0=f1;
+f1=f2;
+}
+return 0;
+}

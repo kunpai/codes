@@ -1,0 +1,21 @@
+/* 
+* File: divisibles.c
+* Author: Kunal Pai, ECS36A
+* Objective: To display numbers from 1 to 100,
+* divisible by 6 or 7,
+* in C, using the syntax of C.
+*/
+
+#include <stdio.h>
+#include "genlib.h"
+#include "simpio.h"
+
+int main()
+{
+for (int i=1; i<=100; i++)
+{
+if (i%6==0||i%7==0)
+printf("%4d\n",i);
+}
+return 0;
+}

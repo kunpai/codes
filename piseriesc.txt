@@ -1,0 +1,27 @@
+/* 
+* File: piseries.c
+* Author: Kunal Pai, ECS36A
+* Objective: To approximate the value of pi,
+* using 10000 terms of a series
+* in C, using the syntax of C.
+*/
+
+#include <stdio.h>
+#include "genlib.h"
+#include "simpio.h"
+
+int main()
+{
+double sum,pi;
+for (int i=1; i<=10000; i++)
+{
+double fraction=((2*i)-1);
+if(i%2==0)
+sum+=-1/fraction;
+else
+sum+=1/fraction; 
+}
+pi=4*sum;
+printf("Value of Pi is: %12.10lf\n",pi);
+return 0;
+}

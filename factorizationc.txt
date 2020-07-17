@@ -1,0 +1,31 @@
+/* 
+* File: factorization.c
+* Author: Kunal Pai, ECS36A
+* Objective: To factorize a number into its prime factors completely,
+* in C, using the syntax of C.
+*/
+
+#include <stdio.h>
+#include "genlib.h"
+#include "simpio.h"
+
+int main()
+{
+printf("Enter number to be factorized: \n");
+int num=GetInteger();
+int i=2;
+while(i!=1)
+{
+if(num%i==0)
+{
+while(num%i==0)
+{
+int j=i;
+printf("%d * ",j);
+num=num/i;
+}
+}
+i++;
+}
+return 0;
+}

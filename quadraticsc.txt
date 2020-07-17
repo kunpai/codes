@@ -1,0 +1,40 @@
+/* 
+* File: quadratics.c
+* Author: Kunal Pai, ECS36A
+* Objective: To find roots of a quadratic equation,
+* using the quadratic formula
+* in C, using the syntax of C.
+*/
+
+#include <stdio.h>
+#include <math.h>
+#include "genlib.h"
+#include "simpio.h"
+
+int main()
+{
+double solution1, solution2;
+printf("Enter coefficients for the quadratic equation:\n");
+printf("a: ");
+double a=GetReal();
+printf("b: ");
+double b=GetReal();
+printf("c: ");
+double c=GetReal();
+double determinant=(b*b)-(4*a*c);
+if (determinant<0)
+printf("The equation has no real solutions.\n");
+else if (determinant==0)
+{
+solution1=-b/(2*a);
+printf("The only solution is %g\n",solution1);
+}
+else
+{
+solution1=(-b+sqrt(determinant))/(2*a);
+solution2=(-b-sqrt(determinant))/(2*a);
+printf("The first solution is %g\n",solution1);
+printf("The second solution is %g\n",solution2);
+}
+return 0;
+}
