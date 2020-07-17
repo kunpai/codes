@@ -1,0 +1,54 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MosquitoMovement : MonoBehaviour
+{
+    private Transform transform;
+    private float time;
+    private float timerlength;
+    private Rigidbody rigidbody;
+    
+    public float MinVel;
+    public float MaxVel;
+
+    public float MinTime;
+    public float MaxTime;
+
+    //First to be called at beginning of scene load, used for internal init
+    void Awake()
+    {
+        transform = GetComponent<Transform>();
+        rigidbody = GetComponent<Rigidbody>();
+        time = 0f;
+    }
+
+    //Comes after awake used for external init
+    void Start()
+    {
+
+    }
+
+    //Called every frame, do gameplay things here
+    void Update()
+    {
+        time += Time.deltaTime;
+        if (time >= timerlength)
+        {
+            //change direction and speed
+            Vector3 NewVelocity = new Vector3(Random.Range(-1f,1f),Random.Range(-1f, 1f),Random.Range(-1f, 1f));
+            rigidbody.velocity = NewVelocity.normalized * Random.Range(MinVel, MaxVel);
+            rigidbody.MoveRotation(Quaternion.LookRotation(transform.forward));
+            time = 0;
+            //determine new timerlength
+            timerlength = Random.Range(MinTime, MaxTime);
+        }
+        
+    }
+
+    //Used for physics manipulations, move movement happens here
+    void FixedUpdate()
+    {
+       
+    }
+}
