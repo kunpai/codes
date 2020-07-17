@@ -1,0 +1,31 @@
+# Kunal Pai
+#
+# Trying to find compound interest and credit card payoff calculator
+
+
+debt=(float(input("Enter initial balance:")))
+rate=(float(input("Enter annual % interest rate:")))
+amt=(float(input("Enter monthly payment:")))
+month=1
+balance=debt
+constantamt=amt #defining the input amount as a constant so that the increment is linear
+totalint=0 #used to calculate total amount paid as interest
+interest=((balance*((rate)/1200)))
+if constantamt<interest:
+        print("At the rate of " +'${0:.2f}'.format(amt)+" a month, you will never pay off that debt.")
+else:
+    while balance>=0.00:
+        amt=month*constantamt
+        interest=((balance*((rate)/1200)))
+        totalint+=interest
+        print("Month:",month)
+        print("Beginning balance:",'${0:.2f}'.format(balance))
+        print("Interest charge this month:" , '${0:.2f}'.format(interest))
+        balance=balance+interest-constantamt
+        month+=1
+        if balance<=0:
+            print("Balance going forward: $0.00")
+            print("Total paid to date:", '${0:.2f}'.format(totalint+debt))
+        else:    
+            print("Balance going forward:",'${0:.2f}'.format(balance))
+            print("Total paid to date:", '${0:.2f}'.format(amt))
